@@ -20,8 +20,9 @@ import article.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', article.views.home),
-    url(r'^(?P<my_args>\d+)/$', article.views.detail, name='detail'),
+    #url(r'^$', article.views.home),
+    url(r'^home/', article.views.home),
+    url(r'^(?P<id>\d+)/$', article.views.detail, name='detail'),
 ]
 #url()函数有四个参数, 两个是必须的:regex和view,
 #两个可选的:kwargs和name
