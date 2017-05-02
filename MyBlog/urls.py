@@ -20,9 +20,15 @@ import article.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #url(r'^$', article.views.home),
+    url(r'^$', article.views.home),
     url(r'^home/', article.views.home),
     url(r'^(?P<id>\d+)/$', article.views.detail, name='detail'),
+    #访问IP/1
+    url(r'^archives/$',article.views.archives,name='archives'),
+    url(r'^aboutme/$',article.views.about_me,name="about_me"),
+    #访问IP/aboutme
+    url(r'^tag(?P<tag>\w+)/$', article.views.search_tag, name = 'search_tag'),
+    #访问IP/tagPython
 ]
 #url()函数有四个参数, 两个是必须的:regex和view,
 #两个可选的:kwargs和name
